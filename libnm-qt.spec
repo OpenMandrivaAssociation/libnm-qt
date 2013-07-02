@@ -19,9 +19,10 @@ Source0:        %{name}-%{version}-git%{git_commit}.tar.bz2
 
 BuildRequires:  cmake >= 2.6
 BuildRequires:  pkgconfig(QtCore)
-BuildRequires:  libmm-qt-devel >= 0.6.0
+BuildRequires:  pkgconfig(ModemManagerQt)
 BuildRequires:  pkgconfig(NetworkManager) >= 0.9.8
-BuildRequires:  pkgconfig(libnm-glib) pkgconfig(libnm-util)
+BuildRequires:  pkgconfig(libnm-glib)
+BuildRequires:  pkgconfig(libnm-util)
 
 Requires:  NetworkManager >= 0.9.8
 
