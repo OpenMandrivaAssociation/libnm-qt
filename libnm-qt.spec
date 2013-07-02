@@ -8,7 +8,7 @@ Name:           libnm-qt
 Version:        0.9.8
 Release:        2.20130613git%{git_commit}%{?dist}
 Summary:        Qt-only wrapper for NetworkManager DBus API
-Group:          System Environment/Libraries
+Group:          System/Libraries
 License:        LGPLv2+
 URL:            https://projects.kde.org/projects/extragear/libs/libnm-qt
 # Package from git snapshots, create example:
