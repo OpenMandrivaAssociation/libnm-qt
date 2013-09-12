@@ -1,22 +1,16 @@
-%define git_commit 1a1bda4
-%define snapshot 20130613
-
 %define major 0
-%define libname %mklibname nm-qt %{major}
-%define devname %mklibname -d nm-qt
+%define libname %mklibname NetworkManagerQt %{major}
+%define devname %mklibname -d NetworkManagerQt
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.8
-Release:	3.%{snapshot}.1
+Version:	0.9.0
+Release:	1
+Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://projects.kde.org/projects/extragear/libs/libnm-qt
-# Package from git snapshots, create example:
-# git clone git://anongit.kde.org/libnm-qt.git
-# cd libnm-qt
-# git archive --prefix=libnm-qt-%{version}/ master | bzip2 > ../%{name}-%{version}-git%{git_commit}.tar.bz2
-Source0:	%{name}-%{version}-git%{git_commit}.tar.bz2
+Source0:	%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(ModemManagerQt)
@@ -27,25 +21,42 @@ BuildRequires:	pkgconfig(libnm-util)
 %description
 Qt library for NetworkManager.
 
+#----------------------------------------------------------------------------
+
 %package -n %{libname}
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Group:		System/Libraries
+Conflicts:	%{_lib}nm-qt0 < 1:0.9.0
+Obsoletes:	%{_lib}nm-qt0 < 1:0.9.0
 
 %description -n %{libname}
 Qt library for NetworkManager.
 
+%files -n %{libname}
+%{_libdir}/libNetworkManagerQt.so.%{major}*
+
+#----------------------------------------------------------------------------
 
 %package -n %{devname}
 Summary:	Development files for %{name}
 Group:		Development/C++
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Conflicts:	%{_lib}nm-qt-devel < 1:0.9.0
+Obsoletes:	%{_lib}nm-qt-devel < 1:0.9.0
 
 %description -n %{devname}
 Qt libraries and header files for developing applications
 that use NetworkManager.
 
+%files -n %{devname}
+%{_libdir}/pkgconfig/NetworkManagerQt.pc
+%{_libdir}/libNetworkManagerQt.so
+%{_includedir}/NetworkManagerQt/
+
+#----------------------------------------------------------------------------
+
 %prep
-%setup -qn %{name}-%{version}-git%{git_commit}
+%setup -q
 
 %build
 %cmake
@@ -54,10 +65,3 @@ that use NetworkManager.
 %install
 %makeinstall_std -C build
 
-%files -n %{libname}
-%{_libdir}/libNetworkManagerQt.so.%{major}*
-
-%files -n %{devname}
-%{_libdir}/pkgconfig/NetworkManagerQt.pc
-%{_libdir}/libNetworkManagerQt.so
-%{_includedir}/NetworkManagerQt/
