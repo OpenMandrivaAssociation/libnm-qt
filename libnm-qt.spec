@@ -4,13 +4,13 @@
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.0
+Version:	0.9.0.1
 Release:	1
 Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://projects.kde.org/projects/extragear/libs/libnm-qt
-Source0:	%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/unstable/networkmanager-qt/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(ModemManagerQt)
