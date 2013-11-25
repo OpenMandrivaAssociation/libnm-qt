@@ -13,6 +13,7 @@ Url:		https://projects.kde.org/projects/extragear/libs/libnm-qt
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/networkmanager-qt/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
+BuildRequires:	pkgconfig(ModemManager)
 BuildRequires:	pkgconfig(ModemManagerQt)
 BuildRequires:	pkgconfig(NetworkManager) >= 0.9.8
 BuildRequires:	pkgconfig(libnm-glib)
