@@ -4,7 +4,7 @@
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.8.0
+Version:	0.9.8.1
 Release:	1
 Epoch:		1
 License:	LGPLv2+
@@ -15,7 +15,7 @@ BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(ModemManager)
 BuildRequires:	pkgconfig(ModemManagerQt)
-BuildRequires:	pkgconfig(NetworkManager) >= 0.9.8
+BuildRequires:	pkgconfig(NetworkManager) >= 0.9.8.4
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-util)
 
