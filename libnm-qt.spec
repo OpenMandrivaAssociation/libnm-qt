@@ -1,6 +1,7 @@
 %define major 0
 %define libname %mklibname NetworkManagerQt %{major}
 %define devname %mklibname -d NetworkManagerQt
+%define debug_package %{nil}
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
