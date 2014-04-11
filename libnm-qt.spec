@@ -6,7 +6,7 @@
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
 Version:	0.9.8.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -28,8 +28,8 @@ Qt library for NetworkManager.
 %package -n %{libname}
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Group:		System/Libraries
-Conflicts:	%{_lib}nm-qt0 < 1:0.9.0
-Obsoletes:	%{_lib}nm-qt0 < 1:0.9.0
+Conflicts:	%{_lib}nm-qt0 < 1:0.9.8.1
+Obsoletes:	%{_lib}nm-qt0 < 1:0.9.8.1
 
 %description -n %{libname}
 Qt library for NetworkManager.
@@ -43,8 +43,8 @@ Qt library for NetworkManager.
 Summary:	Development files for %{name}
 Group:		Development/C++
 Requires:	%{libname} = %{EVRD}
-Conflicts:	%{_lib}nm-qt-devel < 1:0.9.0
-Obsoletes:	%{_lib}nm-qt-devel < 1:0.9.0
+Conflicts:	%{_lib}nm-qt-devel < 1:0.9.8.1
+Obsoletes:	%{_lib}nm-qt-devel < 1:0.9.8.1
 
 %description -n %{devname}
 Qt libraries and header files for developing applications
