@@ -1,4 +1,4 @@
-%define major 0
+%define major 1
 %define libname %mklibname NetworkManagerQt %{major}
 %define devname %mklibname -d NetworkManagerQt
 %define debug_package %{nil}
@@ -30,6 +30,7 @@ Summary:	Qt-only wrapper for NetworkManager DBus API
 Group:		System/Libraries
 Conflicts:	%{_lib}nm-qt0 < 1:0.9.8.1
 Obsoletes:	%{_lib}nm-qt0 < 1:0.9.8.1
+Obsoletes:	%{mklibname NetworkManagerQt 0} < 0.9.8.2
 
 %description -n %{libname}
 Qt library for NetworkManager.
