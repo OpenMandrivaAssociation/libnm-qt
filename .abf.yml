@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libnm-qt-0.9.8.1.tar.xz: e5b3572418162ce9f6f7a66220b777fa69a1b4bc
+sources:
+  libnm-qt-0.9.8.2.tar.xz: f5bbdd040bd4a31a39429c0c1dc83faed737c502
