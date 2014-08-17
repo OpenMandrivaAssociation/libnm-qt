@@ -5,8 +5,8 @@
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.8.1
-Release:	2
+Version:	0.9.8.2
+Release:	1
 Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
