@@ -1,4 +1,4 @@
-%define major 0
+%define major 1
 %define libname %mklibname NetworkManagerQt %{major}
 %define devname %mklibname -d NetworkManagerQt
 %define debug_package %{nil}
