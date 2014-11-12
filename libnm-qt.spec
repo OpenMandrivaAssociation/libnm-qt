@@ -1,17 +1,18 @@
-%define major 0
+%define major 1
 %define libname %mklibname NetworkManagerQt %{major}
 %define devname %mklibname -d NetworkManagerQt
 %define debug_package %{nil}
 
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.8.2
+Version:	0.9.8.3
 Release:	1
 Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://projects.kde.org/projects/extragear/libs/libnm-qt
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/networkmanager-qt/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		libnm-qt-0.9.8.3-version.patch
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(ModemManager)
@@ -28,14 +29,15 @@ Qt library for NetworkManager.
 %package -n %{libname}
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Group:		System/Libraries
-Conflicts:	%{_lib}nm-qt0 < 1:0.9.8.1
-Obsoletes:	%{_lib}nm-qt0 < 1:0.9.8.1
+Conflicts:	%{_lib}nm-qt0 < 1:0.9.8.3
+Obsoletes:	%{_lib}nm-qt0 < 1:0.9.8.3
 
 %description -n %{libname}
 Qt library for NetworkManager.
 
 %files -n %{libname}
-%{_libdir}/libNetworkManagerQt.so.%{major}*
+%{_libdir}/libNetworkManagerQt.so.%{version}
+%{_libdir}/libNetworkManagerQt.so.%{major}
 
 #----------------------------------------------------------------------------
 
@@ -59,11 +61,9 @@ that use NetworkManager.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-# (tpg) fix borked soversion
-sed -i -e 's/SOVERSION 1/SOVERSION 0/' CMakeLists.txt
-
 %cmake
 %make
 
