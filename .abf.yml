@@ -2,4 +2,4 @@ removed_sources:
   libnm-qt-0.9.8.1.tar.xz: e5b3572418162ce9f6f7a66220b777fa69a1b4bc
   libnm-qt-0.9.8.2.tar.xz: f5bbdd040bd4a31a39429c0c1dc83faed737c502
 sources:
-  libnm-qt-0.9.8.3.tar.xz: 926ff391e614891e883fbb342ec05357f56e60be
+  networkmanager-qt-0.9.8.4.tar.xz: a4de72a59631d73923f32815fc1d5613012bcf01

@@ -3,16 +3,17 @@
 %define devname %mklibname -d NetworkManagerQt
 %define debug_package %{nil}
 
+%define rname networkmanager-qt
+
 Summary:	Qt-only wrapper for NetworkManager DBus API
 Name:		libnm-qt
-Version:	0.9.8.3
-Release:	3
+Version:	0.9.8.4
+Release:	1
 Epoch:		1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://projects.kde.org/projects/extragear/libs/libnm-qt
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/networkmanager-qt/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		libnm-qt-0.9.8.3-version.patch
+Source0:	http://download.kde.org/unstable/networkmanager-qt/%{version}/src/%{rname}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(ModemManager)
@@ -60,8 +61,7 @@ that use NetworkManager.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -qn %{rname}-%{version}
 
 %build
 %cmake
